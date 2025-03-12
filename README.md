@@ -71,8 +71,8 @@ Hệ thống hỗ trợ cả **người dùng (user)** và **quản trị viên 
 ### 📌 **2. Cách tải chương trình**  
 #### ✅ **Cách 1: Clone từ GitHub**  
 ```sh
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/phungnhk24dtcn268/wallet-management-system.git
+cd wallet-management-system
 ```
 
 #### ✅ **Cách 2: Tải thủ công**  
