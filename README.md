@@ -76,7 +76,7 @@ cd wallet-management-system
 ```
 
 #### ✅ **Cách 2: Tải thủ công**  
-- Truy cập [GitHub](https://github.com/) và tải file **main.cpp**.  
+- Truy cập [GitHub](https://github.com/phungnhk24dtcn268/wallet-management-system.git) và tải file **main.cpp**.  
 - Lưu vào thư mục làm việc của bạn.  
 
 ### 📌 **3. Cách biên dịch chương trình**  
