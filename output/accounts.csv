@@ -1,0 +1,3 @@
+username,password,role,points,isFirstLogin,history
+dfd,115645,user,100,1,
+phung,1234,administrator,3,0,Received 3 points from phung2|Deleted all users (except self)|Changed role of cc to administrator|>>> Deleted all users (except self)|
