@@ -14,10 +14,10 @@ Hệ thống hỗ trợ cả **người dùng (user)** và **quản trị viên 
 ## 👨‍💻 **Thành viên tham gia dự án**  
 | Thành viên | Công việc |  
 |------------|----------|  
-| **Nguyễn Văn A** | Xây dựng hệ thống quản lý tài khoản, xử lý đăng nhập & đăng ký |  
-| **Trần Thị B** | Phát triển tính năng OTP, mã hóa mật khẩu & bảo mật |  
-| **Lê Văn C** | Quản lý giao dịch điểm, xử lý ghi log & quản lý tài khoản |  
-| **Hoàng Thị D** | Thiết kế hệ thống file CSV, lưu trữ dữ liệu & giao diện CLI |  
+| **Ngô Hoàng Phụng** | Xây dựng hệ thống quản lý tài khoản, xử lý đăng nhập & đăng ký |  
+| | Phát triển tính năng OTP, mã hóa mật khẩu & bảo mật |  
+| | Quản lý giao dịch điểm, xử lý ghi log & quản lý tài khoản |  
+| | Thiết kế hệ thống file CSV, lưu trữ dữ liệu & giao diện CLI |  
 
 ---
 
