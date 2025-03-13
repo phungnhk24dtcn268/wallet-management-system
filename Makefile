@@ -1,2 +1,4 @@
 all:
-    gcc -o my_program main.c
+	g++ -o main main.cpp
+check:
+	./main
