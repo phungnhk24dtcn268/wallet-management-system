@@ -5,3 +5,55 @@
 [2025-3-12 15:43:28] User phung logged in.
 [2025-3-12 15:44:38] New account created: dfd (Role: user)
 [2025-3-12 15:45:6] User dfd logged in.
+[2025-3-13 10:11:21] New account created: user3 (Role: user)
+[2025-3-13 10:12:3] User phung logged in.
+[2025-3-13 10:20:5] New account created: c (Role: user)
+[2025-3-13 10:22:16] User phung logged in.
+[2025-3-13 10:23:48] User phung logged in.
+[2025-3-13 10:24:22] User phung logged in.
+[2025-3-13 10:26:52] User phung logged in.
+[2025-3-13 10:27:17] Transaction: phung transferred 1 points to c
+[2025-3-13 10:27:37] User phung logged in.
+[2025-3-13 10:29:12] User phung logged in.
+[2025-3-13 10:29:29] User phung changed role of c to user
+[2025-3-13 10:30:44] User phung logged in.
+[2025-3-13 10:32:23] User phung logged in.
+[2025-3-13 10:33:55] Transaction: phung transferred 1 points to phung
+[2025-3-13 10:35:40] New account created: phung (Role: user)
+[2025-3-13 10:35:54] New account created: admin (Role: administrator)
+[2025-3-13 10:36:59] User phung logged in.
+[2025-3-13 10:37:9] Transaction: phung transferred 1 points to admin
+[2025-3-13 10:38:57] User phung logged in.
+[2025-3-13 10:39:28] Transaction: phung transferred 1 points to admin
+[2025-3-13 10:40:2] Transaction: phung transferred 1 points to admin
+[2025-3-13 10:43:8] User phung logged in.
+[2025-3-13 10:47:3] User phung logged in.
+[2025-3-13 10:47:32] Transaction: phung transferred 97 points to admin
+[2025-3-13 10:50:17] User phung logged in.
+[2025-3-13 10:51:56] User phung logged in.
+[2025-3-13 10:56:30] User phung logged in.
+[2025-3-13 10:58:51] User phung logged in.
+[2025-3-13 11:0:11] User phung logged in.
+[2025-3-13 11:1:54] User admin logged in.
+[2025-3-13 11:2:46] User phung logged in.
+[2025-3-13 11:5:2] User phung logged in.
+[2025-3-13 11:6:32] User phung logged in.
+[2025-3-13 11:6:46] User admin logged in.
+[2025-3-13 11:7:3] User admin logged in.
+[2025-3-13 11:8:35] User phung logged in.
+[2025-3-13 11:8:42] User admin logged in.
+[2025-3-13 11:10:45] User phung logged in.
+[2025-3-13 11:10:51] User admin logged in.
+[2025-3-13 11:11:59] User phung logged in.
+[2025-3-13 11:12:22] User admin logged in.
+[2025-3-13 11:14:23] User phung logged in.
+[2025-3-13 11:14:35] User admin logged in.
+[2025-3-13 11:15:39] User phung logged in.
+[2025-3-13 11:15:55] User admin logged in.
+[2025-3-13 11:16:58] User phung logged in.
+[2025-3-13 11:17:12] User admin logged in.
+[2025-3-13 11:17:37] User admin logged in.
+[2025-3-13 11:21:54] User phung logged in.
+[2025-3-13 11:22:0] User admin logged in.
+[2025-3-13 11:23:16] User phung logged in.
+[2025-3-13 11:23:29] User admin logged in.
