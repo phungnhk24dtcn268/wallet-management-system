@@ -57,3 +57,19 @@
 [2025-3-13 11:22:0] User admin logged in.
 [2025-3-13 11:23:16] User phung logged in.
 [2025-3-13 11:23:29] User admin logged in.
+[2025-3-13 14:20:14] New account created: c (Role: user)
+[2025-3-13 14:22:33] New account created: cc (Role: user)
+[2025-3-13 14:25:49] New account created: vb (Role: user)
+[2025-3-13 14:26:27] New account created: ccc (Role: administrator)
+[2025-3-13 14:26:48] User ccc logged in.
+[2025-3-13 14:28:0] New account created: . (Role: user)
+[2025-3-13 14:40:47] User phung logged in.
+[2025-3-13 14:41:1] User admin logged in.
+[2025-3-13 14:41:8] Transaction: admin transferred 50 points to phung
+[2025-3-13 14:43:47] User admin logged in.
+[2025-3-13 14:43:54] Transaction: admin transferred 10 points to phung
+[2025-3-13 14:45:52] User admin logged in.
+[2025-3-13 14:45:59] Transaction: admin transferred 1 points to phung
+[2025-3-13 14:46:44] New account created: dsdf (Role: administrator)
+[2025-3-13 14:49:57] User phung logged in.
+[2025-3-13 14:59:48] New account created: b (Role: user)
