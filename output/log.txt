@@ -73,3 +73,53 @@
 [2025-3-13 14:46:44] New account created: dsdf (Role: administrator)
 [2025-3-13 14:49:57] User phung logged in.
 [2025-3-13 14:59:48] New account created: b (Role: user)
+[2025-3-13 16:30:21] New account created: bbb (Role: user)
+[2025-3-13 16:30:27] New account created: kkg (Role: administrator)
+[2025-3-13 16:30:48] User phung logged in.
+[2025-3-13 16:31:8] User phung logged in.
+[2025-3-13 16:31:17] Transaction: phung transferred 1 points to admin
+[2025-3-15 0:27:41] User admin logged in.
+[2025-3-15 0:27:55] Transaction: admin transferred 1 points to phung
+[2025-3-19 22:24:53] User phung logged in.
+[2025-3-19 22:27:27] User c logged in.
+[2025-3-19 22:33:30] User c logged in.
+[2025-3-19 22:33:59] New account created: hhh (Role: user)
+[2025-3-19 23:22:47] New account created: tt (Role: user)
+[2025-3-19 23:23:27] User tt logged in.
+[2025-3-19 23:24:54] Transaction: tt transferred 10 points to phung
+[2025-3-19 23:28:5] User phung logged in.
+[2025-3-19 23:28:23] User admin logged in.
+[2025-3-20 11:34:56] New account created: phung (Role: administrator)
+[2025-3-20 11:36:11] New account created: user1 (Role: user)
+[2025-3-20 11:36:45] User user1 logged in.
+[2025-3-20 11:36:58] Transaction: user1 transferred 100 points to phung
+[2025-3-20 12:10:0] User phung logged in.
+[2025-3-20 12:20:24] New account created: phung (Role: user)
+[2025-3-20 12:20:51] User phung logged in.
+[2025-3-20 12:21:15] New account created: admin (Role: administrator)
+[2025-3-20 12:31:36] New account created: phung (Role: user)
+[2025-3-20 12:35:0] User phung logged in.
+[2025-3-20 12:35:11] Transaction: phung transferred 100000 points to root
+[2025-3-20 12:39:17] New account created: phung (Role: user)
+[2025-3-20 12:39:37] User phung logged in.
+[2025-3-20 12:42:52] User phung logged in.
+[2025-3-20 12:43:13] User phung logged in.
+[2025-3-20 12:45:55] User phung logged in.
+[2025-3-20 12:50:48] User phung logged in.
+[2025-3-20 12:53:1] User phung logged in.
+[2025-3-20 12:56:21] User phung logged in.
+[2025-3-20 12:56:57] User phung logged in.
+[2025-3-20 13:40:12] New account created: 1 (Role: user)
+[2025-3-20 13:43:18] New account created: phung (Role: user)
+[2025-3-20 13:47:11] New account created: phung (Role: user)
+[2025-3-20 13:50:48] User phung logged in.
+[2025-3-20 13:51:1] New account created: user1 (Role: user)
+[2025-3-20 13:51:34] User phung logged in.
+[2025-3-20 13:51:45] Transaction: phung transferred 100 points to user1
+[2025-3-20 14:20:46] New account created: phung (Role: user)
+[2025-3-20 14:23:2] New account created: phung (Role: user)
+[2025-3-20 14:23:59] User phung logged in.
+[2025-3-20 14:26:21] User phung logged in.
+[2025-3-20 14:29:45] New account created: user1 (Role: user)
+[2025-3-20 14:31:4] User user1 logged in.
+[2025-3-20 14:31:15] Transaction: user1 transferred 50000 points to phung
