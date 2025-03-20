@@ -80,3 +80,24 @@ Hệ thống hỗ trợ cả **người dùng (user)** và **quản trị viên 
 ├── main.cpp              # Code chính của hệ thống
 ├── README.md             # Hướng dẫn sử dụng
 └── Makefile              # Hỗ trợ biên dịch chương trình (nếu có)
+---
+
+🔧 Hướng dẫn tải chương trình & cài đặt
+📌 1. Yêu cầu hệ thống
+Hệ điều hành: Windows / Linux / macOS
+
+Trình biên dịch C++: g++ (GCC) hoặc MSVC
+
+Thư viện cần thiết:
+
+<iostream>: Giao tiếp với người dùng
+
+<fstream>: Đọc/ghi file CSV
+
+<map>: Quản lý danh sách tài khoản
+
+<vector>: Lưu lịch sử giao dịch
+
+<cstdlib> & <ctime>: Sinh mã OTP
+
+<termios.h> & <conio.h>: Nhập mật khẩu ẩn
