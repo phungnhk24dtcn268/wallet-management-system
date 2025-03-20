@@ -1,5 +1,11 @@
 # 🔐 **Account Management System (C++)**  
 
+# 🚀 Point Management System (PMS) v1.1
+
+![C++](https://img.shields.io/badge/C++-17-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Last Updated](https://img.shields.io/badge/Last%20Updated-March%2019%2C%202025-orange.svg)
+
 ## 📌 **Giới thiệu dự án**  
 **Account Management System** là một chương trình quản lý tài khoản được viết bằng ngôn ngữ **C++**, cho phép người dùng:  
 - Đăng ký và đăng nhập với hệ thống bảo mật.  
