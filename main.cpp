@@ -1,22 +1,23 @@
-#include <iostream>
-#include <fstream>
+#include <iostream>// Để sử dụng cin, cout
+#include <fstream>// Để sử dụng ifstream, ofstream
 #include <string>
 #include <map>
-#include <vector>
-#include <cstdlib>
+#include <vector>//
+#include <cstdlib>// Để sử dụng hàm srand, rand
 #include <ctime>
 #include <sstream>
-#include <limits>
+#include <limits>// Để sử dụng numeric_limits
 #include <algorithm> // Để sử dụng std::sort
-#ifdef _WIN32
+#ifdef _WIN32// Điều kiện biên dịch cho Windows
 #include <conio.h>  // Dùng cho Windows
 #else
-#include <termios.h>
-#include <unistd.h>
+#include <termios.h>// Dùng cho Linux/macOS
+#include <unistd.h>// Dùng cho Linux/macOS
 #endif
 
 using namespace std;
 
+// Khai báo cấu trúc tài khoản
 struct Account {
     string username;
     string password;
@@ -27,6 +28,8 @@ struct Account {
     string firstLoginAt; // Ghi lại thời gian đăng nhập đầu tiên
     vector<string> transactionHistory;
 };
+
+// Hàm lấy thời gian hiện tại
 string getCurrentTime() {
     time_t now = time(0);
     tm* localTime = localtime(&now);
@@ -155,6 +158,7 @@ void saveTotalWalletTransactionToCSV(const string& transactionDetails, int debit
     }
 }
 
+// Sắp xếp dữ liệu trong file CSV theo ngày và thời gian
 void sortTotalWalletTransactionsCSV() {
     ifstream file("total_wallet_transactions.csv");
     vector<vector<string>> rows;
