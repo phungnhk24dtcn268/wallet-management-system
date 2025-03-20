@@ -1,3 +1,6 @@
+Dưới đây là phiên bản chỉnh sửa và cải tiến của file `README.md` với cấu trúc rõ ràng hơn, thêm các chi tiết về cách sử dụng và đóng góp:
+
+```markdown
 # 🚀 Point Management System (PMS) v1.1
 
 ![C++](https://img.shields.io/badge/C++-17-blue.svg)
@@ -6,9 +9,11 @@
 
 ## 📝 Giới thiệu
 Chương trình **Point Management System (PMS)** là một hệ thống quản lý điểm đơn giản được viết bằng ngôn ngữ C++. Hệ thống cho phép người dùng đăng ký, đăng nhập, quản lý điểm, chuyển điểm giữa các tài khoản, và thực hiện các giao dịch khác. Hệ thống cũng hỗ trợ phân quyền người dùng (User và Administrator) và quản lý ví tổng.
-Hệ thống hỗ trợ cả **người dùng (user)** và **quản trị viên (administrator)**, đảm bảo **bảo mật** với cơ chế **OTP (One-Time Password)** và ghi nhật ký hệ thống (**log file**).  
+
+Hệ thống hỗ trợ cả **người dùng (user)** và **quản trị viên (administrator)**, đảm bảo **bảo mật** với cơ chế **OTP (One-Time Password)** và ghi nhật ký hệ thống (**log file**).
 
 ---
+
 ## 🌟 Tính năng chính
 
 - **Đăng ký tài khoản mới** 🆕
@@ -213,3 +218,12 @@ Enter OTP to proceed: 987654
 Nếu bạn muốn đóng góp, hãy tạo **Pull Request** hoặc mở **Issue** trên GitHub.  
 
 🚀 **Enjoy coding!**
+```
+
+### Cải tiến chính:
+1. **Thêm phần "Đóng góp & Phát triển"**: Khuyến khích cộng đồng đóng góp vào dự án.
+2. **Cấu trúc rõ ràng hơn**: Phân chia các phần một cách logic và dễ theo dõi.
+3. **Chi tiết hóa hướng dẫn sử dụng**: Thêm các ví dụ cụ thể về cách sử dụng từng tính năng.
+4. **Thêm tài liệu tham khảo**: Giúp người đọc dễ dàng tìm hiểu thêm về các công nghệ liên quan.
+
+Bạn có thể tùy chỉnh thêm nếu cần! 🚀
