@@ -4,14 +4,36 @@
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![Last Updated](https://img.shields.io/badge/Last%20Updated-March%2019%2C%202025-orange.svg)
 
-## 📌 **Giới thiệu dự án**  
-**Account Management System** là một chương trình quản lý tài khoản được viết bằng ngôn ngữ **C++**, cho phép người dùng:  
-- Đăng ký và đăng nhập với hệ thống bảo mật.  
-- Quản lý tài khoản, thay đổi mật khẩu và xem lịch sử giao dịch.  
-- Chuyển điểm giữa các tài khoản.  
-- Quản trị viên có thể quản lý người dùng: cấp quyền, xóa tài khoản, xem danh sách tài khoản.  
-
+## 📝 Giới thiệu
+Chương trình **Point Management System (PMS)** là một hệ thống quản lý điểm đơn giản được viết bằng ngôn ngữ C++. Hệ thống cho phép người dùng đăng ký, đăng nhập, quản lý điểm, chuyển điểm giữa các tài khoản, và thực hiện các giao dịch khác. Hệ thống cũng hỗ trợ phân quyền người dùng (User và Administrator) và quản lý ví tổng.
 Hệ thống hỗ trợ cả **người dùng (user)** và **quản trị viên (administrator)**, đảm bảo **bảo mật** với cơ chế **OTP (One-Time Password)** và ghi nhật ký hệ thống (**log file**).  
+
+---
+## 🌟 Tính năng chính
+
+- **Đăng ký tài khoản mới** 🆕
+  - Tạo tài khoản với vai trò User hoặc Administrator (yêu cầu xác thực từ root).
+  - Mật khẩu được tạo tự động bằng OTP (One-Time Password) và yêu cầu thay đổi sau lần đăng nhập đầu tiên.
+
+- **Đăng nhập hệ thống** 🔑
+  - Xác thực người dùng bằng username và password.
+  - Bắt buộc thay đổi mật khẩu sau lần đăng nhập đầu tiên.
+
+- **Quản lý điểm** 💰
+  - Chuyển điểm giữa các tài khoản.
+  - Xem lịch sử giao dịch.
+
+- **Quản lý người dùng (Admin)** 👨‍💻
+  - Xem danh sách người dùng.
+  - Chỉnh sửa quyền người dùng.
+  - Xóa người dùng hoặc xóa tất cả người dùng (trừ admin hiện tại).
+
+- **Ví tổng (Root)** 🏦
+  - Quản lý tổng số điểm trong hệ thống.
+  - Xem lịch sử giao dịch của ví tổng.
+
+- **Ghi log hệ thống** 📜
+  - Ghi lại các hoạt động quan trọng như đăng nhập, đăng ký, chuyển điểm, v.v.
 
 ---
 
