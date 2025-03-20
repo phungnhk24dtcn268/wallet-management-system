@@ -123,3 +123,6 @@
 [2025-3-20 14:29:45] New account created: user1 (Role: user)
 [2025-3-20 14:31:4] User user1 logged in.
 [2025-3-20 14:31:15] Transaction: user1 transferred 50000 points to phung
+[2025-3-20 15:39:15] New account created: phung (Role: administrator)
+[2025-3-20 15:40:35] New account created: admin (Role: administrator)
+[2025-3-20 15:41:16] User root logged in.

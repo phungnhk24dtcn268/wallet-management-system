@@ -1,4 +1,0 @@
-username,password,role,points,isFirstLogin,createdAt,firstLoginAt
-root,root,administrator,800000,0,2025-3-20 14:22:51,2025-3-20 14:22:51
-phung,1,user,150000,0,2025-3-20 14:23:2,2025-3-20 14:23:48
-user1,1,user,50000,0,2025-3-20 14:29:45,2025-3-20 14:30:22
