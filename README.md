@@ -1,5 +1,3 @@
-# 🔐 **Account Management System (C++)**  
-
 # 🚀 Point Management System (PMS) v1.1
 
 ![C++](https://img.shields.io/badge/C++-17-blue.svg)
