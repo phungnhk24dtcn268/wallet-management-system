@@ -126,3 +126,9 @@
 [2025-3-20 15:39:15] New account created: phung (Role: administrator)
 [2025-3-20 15:40:35] New account created: admin (Role: administrator)
 [2025-3-20 15:41:16] User root logged in.
+[2025-3-20 15:45:16] New account created: phung (Role: user)
+[2025-3-20 15:45:57] User phung logged in.
+[2025-3-20 15:47:4] User phung logged in.
+[2025-3-20 15:47:22] User phung logged in.
+[2025-3-20 15:47:42] User phung logged in.
+[2025-3-20 15:47:52] User phung logged in.

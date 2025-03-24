@@ -426,15 +426,29 @@ void registerAccount() {
             role = "user";
             break;
         } else if (roleInput == "2") {
-            role = "administrator";
-            break;
+            // Xác thực tài khoản root
+            string rootUsername, rootPassword;
+            cout << ">>> To register as an Administrator, please authenticate with the root account.\n";
+            cout << "Enter root username: ";
+            getline(cin, rootUsername);
+            cout << "Enter root password: ";
+            rootPassword = getPassword();
+
+            if (accounts.find(rootUsername) != accounts.end() &&
+                accounts[rootUsername].password == rootPassword &&
+                accounts[rootUsername].role == "administrator") {
+                role = "administrator";
+                break; // ✅ Xác thực thành công
+            } else {
+                cout << ">>> Authentication failed! Only the root account can authorize Administrator registration.\n";
+            }
         } else {
             cout << ">>> Invalid role! Please enter '1' for User or '2' for Administrator.\n";
         }
     }
 
     initialPoints = (role == "user") ? 100000 : 500000;
-    
+
     // Kiểm tra nếu có đủ điểm trong ví tổng để cấp cho người dùng
     if (totalWalletPoints < initialPoints) {
         cout << ">>> Not enough points in the total wallet to register this account.\n";
@@ -443,11 +457,12 @@ void registerAccount() {
 
     // Giảm điểm từ ví tổng
     totalWalletPoints -= initialPoints;
-    
+
     // 🔹 Cập nhật số điểm của tài khoản root
     if (accounts.find("root") != accounts.end()) {
         accounts["root"].points = totalWalletPoints;
     }
+
     // Ensure total wallet points do not go below 0
     if (totalWalletPoints < 0) {
         cout << ">>> Error: Total wallet points cannot be negative! Registration failed.\n";
@@ -456,7 +471,7 @@ void registerAccount() {
     }
 
     saveTotalWalletToCSV();  // Cập nhật lại thông tin ví tổng
-    
+
     password = generateOTP();
     cout << ">>> Generated password (first-time login required): " << password << endl;
 
@@ -470,7 +485,7 @@ void registerAccount() {
     newAccount.firstLoginAt = "";
 
     accounts[username] = newAccount;
-    
+
     // Save the account data to CSV
     saveAccountsToCSV();  // This will now update the accounts.csv file with the new account
 
@@ -487,6 +502,8 @@ void changePassword() {
     string newPassword, confirmPassword;
     int attempts = 0;  // Số lần nhập OTP sai
     
+    // Xóa bộ đệm trước khi sử dụng getline
+    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     // Xác thực bằng OTP
     string otp = generateOTP();
     cout << ">>> OTP sent to your email/phone: " << otp << endl;
