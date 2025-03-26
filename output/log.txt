@@ -132,3 +132,12 @@
 [2025-3-20 15:47:22] User phung logged in.
 [2025-3-20 15:47:42] User phung logged in.
 [2025-3-20 15:47:52] User phung logged in.
+[2025-3-26 13:27:21] User root logged in.
+[2025-3-26 13:28:25] User root logged in.
+[2025-3-26 13:28:37] User root logged in.
+[2025-3-26 13:30:10] User root logged in.
+[2025-3-26 13:30:31] New account created: phung (Role: user)
+[2025-3-26 13:30:47] User phung logged in.
+[2025-3-26 13:30:53] User root logged in.
+[2025-3-26 13:38:7] User root logged in.
+[2025-3-26 13:38:15] User root logged in.

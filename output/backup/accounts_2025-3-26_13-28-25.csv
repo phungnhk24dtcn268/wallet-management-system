@@ -1,0 +1,2 @@
+username,password,role,points,isFirstLogin,createdAt,firstLoginAt
+root,root,administrator,1000000,0,2025-3-26 13:27:12,2025-3-26 13:27:12

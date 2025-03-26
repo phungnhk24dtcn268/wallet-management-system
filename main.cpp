@@ -14,6 +14,7 @@
 #include <termios.h>// Dùng cho Linux/macOS
 #include <unistd.h>// Dùng cho Linux/macOS
 #endif
+#include <filesystem> // Thư viện để thao tác file và thư mục (C++17 trở lên)
 
 using namespace std;
 
@@ -139,7 +140,16 @@ string getPassword() {
  */
 int totalWalletPoints = 1000000; // 1,000,000 điểm cho ví tổng
 
-// Cập nhật vào CSV cho ví tổng
+/**
+ * @brief Lưu số điểm hiện tại của ví tổng vào file `total_wallet.csv`.
+ * 
+ * Input:
+ * - Không có.
+ * 
+ * Output:
+ * - File `total_wallet.csv` được cập nhật với số điểm hiện tại.
+ * - Hiển thị thông báo lỗi nếu không thể mở file.
+ */
 void saveTotalWalletToCSV() {
     ofstream file("total_wallet.csv");
     if (file.is_open()) {
@@ -670,13 +680,8 @@ void registerAccount() {
 
     accounts[username] = newAccount;
 
-<<<<<<< HEAD
-    // Save the account data to CSV
-    saveAccountsToCSV();  // This will now update the accounts.csv file with the new account
-=======
     // Lưu thông tin tài khoản vào file CSV
     saveAccountsToCSV();
->>>>>>> b462ad115fa36c3acd9527f213df584cc0426421
 
     writeLog("New account created: " + username + " (Role: " + role + ")");
 
@@ -704,11 +709,6 @@ void registerAccount() {
 void changePassword() {
     string newPassword, confirmPassword;
     int attempts = 0;  // Số lần nhập OTP sai
-<<<<<<< HEAD
-    
-    // Xóa bộ đệm trước khi sử dụng getline
-    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-=======
     clearScreen();    
 
     // Nhập username, không cho phép để trống hoặc trùng lặp
@@ -717,7 +717,6 @@ void changePassword() {
     cout << "*          CHANGE PASSWORD PAGE           *" << endl;
     cout << "*                                         *" << endl;
     cout << "* * * * * * * * * * * * * * * * * * * * * *" << endl;
->>>>>>> b462ad115fa36c3acd9527f213df584cc0426421
     // Xác thực bằng OTP
     string otp = generateOTP();
     cout << ">>> OTP sent to your email/phone: " << otp << endl;
@@ -822,10 +821,22 @@ void viewAccountInfo() {
  * 
  * Output:
  * - Cập nhật số điểm của người gửi và người nhận.
- * - Ghi lịch sử giao dịch vào bộ nhớ và file CSV.
+ * - Ghi lịch sử giao dịch vào bộ nhớ và file `transactions.csv`.
  * - Hiển thị thông báo thành công hoặc lỗi.
+ * 
+ * Quy trình:
+ * 1. Người dùng nhập tên tài khoản người nhận.
+ * 2. Kiểm tra tính hợp lệ của tài khoản người nhận (không được là chính mình, không được là root, phải tồn tại).
+ * 3. Người dùng nhập số điểm cần chuyển và xác thực số dư.
+ * 4. Xác thực giao dịch bằng OTP.
+ * 5. Nếu OTP hợp lệ:
+ *    - Trừ điểm từ tài khoản người gửi.
+ *    - Cộng điểm vào tài khoản người nhận.
+ *    - Ghi lịch sử giao dịch vào bộ nhớ và file CSV.
+ *    - Hiển thị thông báo thành công.
+ * 6. Nếu OTP không hợp lệ:
+ *    - Hiển thị thông báo lỗi và hủy giao dịch.
  */
-// Chức năng chuyển điểm
 void transferPoints() {
     string toUsername;
     int amount = 0;
@@ -1088,6 +1099,9 @@ void deleteAllUsers() {
 
     saveAccountsToCSV();
     cout << ">>> Successfully deleted " << deletedCount << " users!\n";
+    cin.ignore(1000, '\n'); // Xóa bộ đệm trước khi tiếp tục
+    system("pause");
+    clearScreen();
 }
 
 /**
@@ -1108,51 +1122,47 @@ void deleteAllUsers() {
 void manageUsers() {
     clearScreen();
     while (true) {
-        cout << "\n* * * * * * * * * * * * * * * * * * * * * * " << endl;
-        cout << "*                                         *" << endl;
-        cout << "*           USER INFORMATION LIST         *" << endl;
-        cout << "*                                         *" << endl;
-        cout << "* * * * * * * * * * * * * * * * * * * * * *" << endl;
+        cout << "\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *" << endl;
+        cout << "*                                                                               *" << endl;
+        cout << "*                                USER INFORMATION LIST                          *" << endl;
+        cout << "*                                                                               *" << endl;
+        cout << "* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *" << endl;
+
+        // Hiển thị tiêu đề bảng
+        cout << left << setw(15) << "Username" 
+             << setw(15) << "Role" 
+             << setw(10) << "Points" 
+             << setw(20) << "Created At" 
+             << setw(20) << "First Login At" << endl;
+        cout << string(80, '-') << endl; // Dòng kẻ ngang
+
+        // Hiển thị danh sách người dùng
         for (const auto& account : accounts) {
-            cout << "Username: " << account.second.username << " | Role: " << account.second.role << "\n";
+            cout << left << setw(15) << account.second.username
+                 << setw(15) << account.second.role
+                 << setw(10) << account.second.points
+                 << setw(20) << account.second.createdAt
+                 << setw(20) << (account.second.firstLoginAt.empty() ? "N/A" : account.second.firstLoginAt)
+                 << endl;
         }
 
         string choice;
         cout << "\n1. Edit Permission\n2. Delete User\n3. Delete All Users\n4. Exit\n\n>>> Enter your choice: ";
         getline(cin, choice);
-        // Kiểm tra nhập rỗng
-        if (choice.empty()) {
-            cout << ">>> Choice cannot be empty! Please enter a valid option.\n";
-            continue;
-            clearScreen();
-        }
 
-        // Kiểm tra nếu nhập không phải số hợp lệ
-        if (choice.find_first_not_of("1234") != string::npos) {
-            cout << ">>> Invalid choice! Please enter a number between 1-4.\n";
-            continue;
+        if (choice == "1") {
+            editUserRole();
+        } else if (choice == "2") {
+            deleteUser();
+        } else if (choice == "3") {
+            deleteAllUsers();
+        } else if (choice == "4") {
+            clearScreen();
+            return;
+        } else {
+            cout << ">>> Invalid choice! Please enter a valid option.\n";
             system("pause");
             clearScreen();
-        }
-
-        int option = stoi(choice);
-
-        switch (option) {
-            case 1:
-                editUserRole();
-                break;
-            case 2:
-                deleteUser();
-                break;
-            case 3:
-                deleteAllUsers();
-                break;
-            case 4:
-                return;
-            default:
-                cout << ">>> Invalid choice! Please enter a number between 1-4.\n";
-                system("pause");
-                clearScreen();
         }
     }
 }
@@ -1359,6 +1369,114 @@ bool login() {
 }
 
 /**
+ * @brief Sao lưu dữ liệu hiện tại vào thư mục `backup/`.
+ * 
+ * Input:
+ * - Không có.
+ * 
+ * Output:
+ * - Các file CSV được sao lưu vào thư mục `backup/` với tên chứa dấu thời gian.
+ */
+void backupData() {
+    // Kiểm tra quyền truy cập
+    if (accounts[currentUser].role != "administrator") {
+        cout << ">>> Access denied! Only administrators can perform backups.\n";
+        return;
+    }
+
+    // Tạo thư mục backup nếu chưa tồn tại
+    std::filesystem::create_directory("backup");
+
+    // Lấy thời gian hiện tại để đặt tên file
+    string timestamp = getCurrentTime(); // Hàm getCurrentTime() đã có trong mã
+    std::replace(timestamp.begin(), timestamp.end(), ' ', '_'); // Thay khoảng trắng bằng dấu gạch dưới
+    std::replace(timestamp.begin(), timestamp.end(), ':', '-'); // Thay dấu ":" bằng "-"
+
+    // Danh sách các file cần sao lưu
+    vector<string> filesToBackup = {
+        "accounts.csv",
+        "total_wallet.csv",
+        "transactions.csv",
+        "total_wallet_transactions.csv"
+    };
+
+    // Sao lưu từng file
+    for (const string& file : filesToBackup) {
+        string backupFileName = "backup/" + file.substr(0, file.find('.')) + "_" + timestamp + ".csv";
+        try {
+            std::filesystem::copy(file, backupFileName, std::filesystem::copy_options::overwrite_existing);
+            cout << ">>> Backup successful for file: " << file << " -> " << backupFileName << endl;
+        } catch (const std::exception& e) {
+            cout << ">>> Backup failed for file: " << file << ". Error: " << e.what() << endl;
+        }
+    }
+}
+
+/**
+ * @brief Phục hồi dữ liệu từ một file sao lưu.
+ * 
+ * Input:
+ * - Người dùng chọn file sao lưu từ danh sách.
+ * 
+ * Output:
+ * - Dữ liệu được phục hồi từ file sao lưu.
+ * - Hiển thị thông báo thành công hoặc lỗi.
+ */
+void restoreData() {
+    // Kiểm tra quyền truy cập
+    if (accounts[currentUser].role != "administrator") {
+        cout << ">>> Access denied! Only administrators can restore data.\n";
+        return;
+    }
+
+    // Kiểm tra xem thư mục backup có tồn tại không
+    if (!std::filesystem::exists("backup")) {
+        cout << ">>> Backup folder does not exist! No backups available.\n";
+        return;
+    }
+
+    // Hiển thị danh sách các file sao lưu
+    cout << ">>> Available backup files:\n";
+    vector<string> backupFiles;
+    for (const auto& entry : std::filesystem::directory_iterator("backup")) {
+        if (entry.is_regular_file()) {
+            backupFiles.push_back(entry.path().string());
+            cout << backupFiles.size() << ". " << entry.path().filename().string() << endl;
+        }
+    }
+
+    if (backupFiles.empty()) {
+        cout << ">>> No backup files found!\n";
+        return;
+    }
+
+    // Yêu cầu người dùng chọn file sao lưu
+    int choice;
+    cout << ">>> Enter the number of the backup file to restore: ";
+    cin >> choice;
+
+    // Kiểm tra tính hợp lệ của lựa chọn
+    if (cin.fail() || choice < 1 || choice > static_cast<int>(backupFiles.size())) {
+        cin.clear(); // Xóa trạng thái lỗi của cin
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Xóa bộ đệm
+        cout << ">>> Invalid choice! Restore canceled.\n";
+        return;
+    }
+
+    // Phục hồi từng file
+    string selectedBackup = backupFiles[choice - 1];
+    string originalFile = selectedBackup.substr(selectedBackup.find_last_of('/') + 1);
+    originalFile = originalFile.substr(0, originalFile.find_last_of('_')) + ".csv";
+
+    try {
+        std::filesystem::copy(selectedBackup, originalFile, std::filesystem::copy_options::overwrite_existing);
+        cout << ">>> Restore successful for file: " << originalFile << endl;
+    } catch (const std::exception& e) {
+        cout << ">>> Restore failed for file: " << originalFile << ". Error: " << e.what() << endl;
+    }
+}
+
+/**
  * @brief Điểm bắt đầu của chương trình.
  * 
  * Input:
@@ -1384,7 +1502,7 @@ int main() {
         cout << "* * * * * * * * * * * * * * * * * * * * * *" << endl;
         cout << "\nPlease choose an option below:\n";
         cout << "-------------------------------------------\n";
-        cout << "\n1. Register\n2. Login\n3. Total wallet (for root)\n4. Exit program\n\n>>> Enter your choice: ";
+        cout << "\n1. Register\n2. Login\n3. Total wallet (for root)\n4. Exit program\n5. Backup Data\n6. Restore Data\n\n>>> Enter your choice: ";
         getline(cin, choice); // Sử dụng getline để tránh lỗi nhập từ bộ đệm
         if (choice == "1") {
             registerAccount();
@@ -1441,6 +1559,25 @@ int main() {
                     clearScreen();
                 }
             }
+        }
+        else if (choice == "5") { // Backup Data
+            cout << ">>> Please log in as an administrator to perform a backup.\n";
+            if (login() && accounts[currentUser].role == "administrator") { // Yêu cầu đăng nhập và kiểm tra quyền
+                backupData();
+            } else {
+                cout << ">>> Access denied! Only administrators can perform backups.\n";
+            }
+            system("pause");
+            clearScreen();
+        } else if (choice == "6") { // Restore Data
+            cout << ">>> Please log in as an administrator to restore data.\n";
+            if (login() && accounts[currentUser].role == "administrator") { // Yêu cầu đăng nhập và kiểm tra quyền
+                restoreData();
+            } else {
+                cout << ">>> Access denied! Only administrators can restore data.\n";
+            }
+            system("pause");
+            clearScreen();
         }
         else {
             cout << ">>> Invalid choice. Please try again." << endl;
